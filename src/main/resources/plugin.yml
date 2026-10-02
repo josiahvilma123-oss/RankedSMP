@@ -1,0 +1,17 @@
+name: BlossomRanks
+version: 1.0.0
+main: com.blossomsmp.ranks.BlossomRanks
+api-version: '1.21'
+author: BlossomSMP
+description: Kill ranks for Blossom SMP - more kills = higher rank.
+softdepend: [Vault, PlaceholderAPI, BlossomEconomy]
+
+commands:
+  killranks:
+    description: See the kill ranks and your progress
+    aliases: [kranks, killrank]
+
+permissions:
+  blossomranks.admin:
+    description: Use /killranks reload
+    default: op

@@ -1,0 +1,84 @@
+# ============================================================
+#   ✿  BlossomRanks  -  Kill ranks for Blossom SMP
+# ============================================================
+# More player kills = higher rank. Works next to RankedSMP
+# (the "steal a spot" ranking) - they don't interfere.
+#
+# Colours: &a, &l ...   Hex: &#FF69B4
+# After editing, type  /killranks reload
+#
+# Placeholders for the TAB scoreboard:
+#   %blossomranks_rank%          -> current rank (with colours)
+#   %blossomranks_kills%         -> number of kills
+#   %blossomranks_next_rank%     -> next rank
+#   %blossomranks_kills_needed%  -> kills left until next rank
+
+# Tell the whole server when someone ranks up
+broadcast: true
+broadcast-message: "&#FF69B4✿ &f{player} &7ranked up to {rank} &7with &f{kills} &7kills!"
+
+# Big text on the player's screen when they rank up
+title: "{rank}"
+subtitle: "&7You ranked up! &a+{reward}"
+sound: "entity.player.levelup"
+
+# Shown as the "next rank" when someone is already at the top
+max-rank-text: "&#FFD700MAX RANK"
+
+# Each rank:
+#   name     = how it looks
+#   kills    = kills needed
+#   reward   = money given when they reach it (needs Vault)
+#   commands = console commands to run, {player} = their name
+ranks:
+  seedling:
+    name: "&7🌱 Seedling"
+    kills: 0
+    reward: 0
+    commands: []
+  sprout:
+    name: "&a🌿 Sprout"
+    kills: 5
+    reward: 1000
+    commands: []
+  bud:
+    name: "&#FFB6C1❀ Bud"
+    kills: 15
+    reward: 2500
+    commands: []
+  blossom:
+    name: "&#FF69B4✿ Blossom"
+    kills: 30
+    reward: 5000
+    commands: []
+  petal-warrior:
+    name: "&#FF1493⚔ Petal Warrior"
+    kills: 50
+    reward: 10000
+    commands: []
+  sakura-knight:
+    name: "&#DA70D6🛡 Sakura Knight"
+    kills: 100
+    reward: 25000
+    commands: []
+  cherry-reaper:
+    name: "&#C71585☠ Cherry Reaper"
+    kills: 200
+    reward: 50000
+    commands: []
+  blossom-legend:
+    name: "&#FFD700&l👑 Blossom Legend"
+    kills: 500
+    reward: 100000
+    commands: []
+
+messages:
+  prefix: "&#FF69B4&l✿ RANKS &8» "
+  header: "&#FF69B4&l✿ KILL RANKS &8» &7You have &f{kills} &7kills"
+  line-done: " &a✔ {rank} &8(&7{kills} kills&8)"
+  line-todo: " &8✘ {rank} &8(&7{kills} kills&8)"
+  next: "&7Next rank: {rank} &7in &f{needed} &7more kills"
+  max: "&7You are at the &#FFD700highest rank&7!"
+  reloaded: "&aBlossomRanks config reloaded!"
+  no-permission: "&cYou don't have permission to do that."
+  players-only: "&cOnly players can use this."
